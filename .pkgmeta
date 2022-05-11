@@ -1,0 +1,4 @@
+package-as: KUI_FriendHighlight
+ignore:
+    - screenshots
+    - README.md
