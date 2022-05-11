@@ -1,4 +1,5 @@
 package-as: KUI_FriendHighlight
 ignore:
     - screenshots
+    - logo.png
     - README.md
