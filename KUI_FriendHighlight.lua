@@ -15,18 +15,22 @@ local function Frame_UpdateGuildText(f)
         end
 
         local guild = f.state.guild_text
-        if not guild then return end
+        if not guild then 
+            if f.FriendHighlight ~= nil then f.FriendHighlight:Hide() end
+            return
+        end
 
         local myGuild = GetGuildInfo("player")
-        if not myGuild then return end
+        if not myGuild then
+            return
+        end
 
         if guild == myGuild then
             --print(f.state.name .. " is in your guild.")
             mod:ShowGuildIcon(f)
         else
             --print(f.state.name .. " is not in your guild.")
-
-            
+            if f.FriendHighlight ~= nil then f.FriendHighlight:Hide() end
         end
     else
         if f.FriendHighlight ~= nil then f.FriendHighlight:Hide() end
