@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100002
 ## Version: 1.0.3
 ## Title: Kui |cff9966ffNameplates:|r |cffffffffFriend Highlight|r
 ## Author: Peter Wooley <peterwooley@gmail.com>
