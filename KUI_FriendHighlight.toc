@@ -1,5 +1,5 @@
 ## Interface: 100105
-## Version: 1.0.7
+## Version: 1.0.8
 ## Title: Kui |cff9966ffNameplates:|r |cffffffffFriend Highlight|r
 ## Author: Peter Wooley <peterwooley@gmail.com>
 ## Notes: Highlight Friend and Guildmate KUI nameplates
