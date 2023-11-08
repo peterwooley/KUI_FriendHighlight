@@ -1,6 +1,7 @@
 ## Interface: 100200
 ## Version: 1.0.10
 ## Title: Kui |cff9966ffNameplates:|r |cffffffffFriend Highlight|r
+## IconTexture: 132177
 ## Author: Peter Wooley <peterwooley@gmail.com>
 ## Notes: Highlight Friend and Guildmate KUI nameplates
 ## Dependencies: Kui_Nameplates_Core
