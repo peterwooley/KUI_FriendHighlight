@@ -1,5 +1,5 @@
 ## Interface: 110000
-## Version: 1.0.14
+## Version: 1.0.15
 ## Title: Kui |cff9966ffNameplates:|r |cffffffffFriend Highlight|r
 ## IconTexture: 132177
 ## Author: Peter Wooley <peterwooley@gmail.com>
