@@ -7,7 +7,10 @@ local UnitIsPlayer,UnitIsOtherPlayersPet,GetGuildInfo=
 local function Frame_UpdateGuildText(f)
     f.FriendHighlight_UpdateGuildText(f);
 
-    if UnitIsPlayer(f.unit) then
+    -- Check if unit is a player and--importantly--not you
+    -- Fix providedd by tflo
+    -- https://github.com/peterwooley/KUI_FriendHighlight/issues/1
+    if UnitIsPlayer(f.unit) and not UnitIsUnit(f.unit, 'player') then
         local friend = C_FriendList.IsFriend(UnitGUID(f.unit))
         if friend then
             mod:ShowFriendIcon(f)
