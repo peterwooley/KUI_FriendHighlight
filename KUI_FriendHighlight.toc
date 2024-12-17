@@ -1,4 +1,4 @@
-## Interface: 110005
+## Interface: 110007
 ## Version: 1.0.18
 ## Title: Kui |cff9966ffNameplates:|r |cffffffffFriend Highlight|r
 ## IconTexture: 132177
