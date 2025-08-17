@@ -8,7 +8,7 @@ local function Frame_UpdateGuildText(f)
     f.FriendHighlight_UpdateGuildText(f);
 
     -- Check if unit is a player and--importantly--not you
-    -- Fix providedd by tflo
+    -- Fix provided by tflo
     -- https://github.com/peterwooley/KUI_FriendHighlight/issues/1
     if UnitIsPlayer(f.unit) and not UnitIsUnit(f.unit, 'player') then
         local friend = C_FriendList.IsFriend(UnitGUID(f.unit))
@@ -29,7 +29,7 @@ local function Frame_UpdateGuildText(f)
         end
 
         if guild == myGuild then
-            --print(f.state.name .. " is in your guild.")
+            --print(f.state.name .. " is not in your guild.")
             mod:ShowGuildIcon(f)
         else
             --print(f.state.name .. " is not in your guild.")
@@ -42,8 +42,7 @@ end
 
 function mod:ShowGuildIcon(f)
     local i = f:CreateTexture()
-    i:SetTexture(1981967)
-    i:SetTexCoord(0.2216796875, 0.2451171875, 0.947265625, 0.994140625);
+    i:SetAtlas("hud-microbutton-communities-icon-notification")
     i:SetHeight(17)
     i:SetWidth(17)
 
@@ -52,10 +51,7 @@ end
 
 function mod:ShowFriendIcon(f)
     local i = f:CreateTexture()
-    i:SetTexture("Interface/FriendsFrame/FriendsListFavorite")
-    i:SetTexCoord(0.03125, 0.5625, 0.03125, 0.5625);
-    i:SetHeight(17)
-    i:SetWidth(17)
+    i:SetAtlas("friendslist-favorite", true)
 
     mod:ShowIcon(f, i)
 end
