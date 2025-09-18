@@ -3,6 +3,7 @@ local mod = addon:NewPlugin('FriendHighlight',1005)
 
 local UnitIsPlayer,UnitIsOtherPlayersPet,GetGuildInfo=
       UnitIsPlayer,UnitIsOtherPlayersPet,GetGuildInfo
+local bnet_friends = {}
 
 local function Frame_UpdateGuildText(f)
     f.FriendHighlight_UpdateGuildText(f);
@@ -12,7 +13,8 @@ local function Frame_UpdateGuildText(f)
     -- https://github.com/peterwooley/KUI_FriendHighlight/issues/1
     if UnitIsPlayer(f.unit) and not UnitIsUnit(f.unit, 'player') then
         local friend = C_FriendList.IsFriend(UnitGUID(f.unit))
-        if friend then
+        local bnet_friend = C_BattleNet.GetAccountInfoByGUID(UnitGUID(f.unit))
+        if friend or bnet_friend then
             mod:ShowFriendIcon(f)
             return
         end
@@ -67,6 +69,19 @@ function mod:ShowIcon(f, i)
 end
 
 function mod:Create(f)
+    -- -- Setup Battle.net friends list for later reference
+    -- for i=1, BNGetNumFriends() do
+    --     bnet_friend = C_BattleNet.GetFriendAccountInfo(i)
+    --     if bnet_friend then
+    --         bnet_friends[bnet_friend.accountName] = true
+    --     end
+    -- end
+
+    -- -- Add non-favorites to end of table
+    -- for i=1,#nf do
+    --     friends[#friends+1] = nf[i]
+    -- end
+
     f.FriendHighlight_UpdateGuildText = f.UpdateGuildText
     f.UpdateGuildText = Frame_UpdateGuildText
 end
